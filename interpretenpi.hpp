@@ -3,26 +3,14 @@
 
 #include <QMainWindow>
 #include <QtWidgets>
+#include <QtCore>
+#include "mainwindow.hpp"
 #include <pile.hpp>
 
-namespace Ui {
-class MainWindow;
-}
-
-class MainWindow : public QMainWindow
+class interpretenpi : public QWidget
 {
     Q_OBJECT
 
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-
-private:
-    Ui::MainWindow *ui;
-};
-
-class interpretenpi
-{
 public :
     interpretenpi();
     void interpretation(const QString &);
@@ -52,8 +40,8 @@ public :
     void tan();
     void sqrt();
     void trunc();
-    void line();
-    void color();
+    //void line();
+    //void color();
     void drawstr();
     void exit();
 
@@ -63,8 +51,8 @@ public :
 private :
     Pile<double> dPile;
     Pile<QString> sPile;
-
-
+    QTextEdit * afficher;
+    QLineEdit * MsgEntree;
     map<QString, double> database;
 };
 
