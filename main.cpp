@@ -1,11 +1,14 @@
 #include "interpretenpi.hpp"
+#include "mainwindow.hpp"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    interpretenpi w(argc,argv,pd);
-    w.show();
+    MainWindow v;
+    MainWindow* psd = &v;
+    interpretenpi w(argc,argv,psd);
+    v.show();
 
     return a.exec();
 }
